@@ -1,0 +1,43 @@
+
+
+@font-face {
+  font-family: "Poppins-Bold";   /*Can be any text*/
+  src: local("Poppins-Bold"),
+    url("./fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-Medium";   /*Can be any text*/
+  src: local("Poppins-Medium"),
+    url("./fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-Regular";   /*Can be any text*/
+  src: local("Poppins-Regular"),
+    url("./fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold";   /*Can be any text*/
+  src: local("Poppins-SemiBold"),
+    url("./fonts/Poppins-SemiBold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Poppins-Light";   /*Can be any text*/
+  src: local("Poppins-Light"),
+    url("./fonts/Poppins-Light.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Atype-Medium";   /*Can be any text*/
+  src: local("Atype-Medium"),
+    url("./fonts/Atype-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "DirtyLine";   /*Can be any text*/
+  src: local("DirtyLine"),
+    url("./fonts/DirtyLine.otf") format("opentype");
+}

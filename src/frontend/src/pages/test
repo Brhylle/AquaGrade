@@ -1,0 +1,97 @@
+import { motion } from "framer-motion"
+import { useAuthStore } from "../store/authStore"
+import { formatDate } from "../utils.js/date";
+
+
+
+const HomePage = () => {
+
+  const { user, logout } = useAuthStore();
+
+  const handleLogout = () => {
+    logout();
+    
+  }
+
+  return (
+
+
+    <motion.div
+        initial = {{opacity: 0, scale: 0.9}}
+        animate = {{opacity: 1, scale: 1}}
+        exit = {{opacity: 0, scale: 0.9}}
+        transition = {{duration: 0.5}}>
+
+		<h2 className="text-6xl font-bold m-2 text-center bg-gradient-to-r from-red-700 to-red-600 text-transparent bg-clip-text">
+  		<span style={{ fontFamily: "DirtyLine, sans-serif", fontSize: "5rem" }}>A</span>
+  		<span style={{ fontFamily: "Atype-Medium, sans-serif", fontSize: "4rem", color : "white" }}>quagrade</span>
+		</h2>
+
+
+        <div className="space-y-6">
+        <motion.div 
+        // className='p-4 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700'
+        initial={{opacity: 0, y: 20}}
+        animate={{opacity: 1, y: 0}}
+        transition={{delay: 0.2}}
+        >
+
+            {/* <h3 className= 'text-xl font-semibold text-green-600 mb-3'>You're now Logged In.</h3>
+            <p className="text-gray-300">Name : {user.name}</p>
+            <p className="text-gray-300">Email : {user.email}</p> */}
+            
+        </motion.div>
+
+
+
+
+        <motion.div
+					className='p-4 bg-gray-800 bg-opacity-50 rounded-lg border border-gray-700'
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.4 }}
+				>
+					{/* <h3 className='text-xl font-semibold text-orange-400 mb-3'>Account Activity</h3>
+					<p className='text-gray-300'>
+						<span className='font-bold'>Joined: </span>
+						{new Date(user.createdAt).toLocaleDateString("en-US", {
+							year: "numeric",
+							month: "long",
+							day: "numeric",
+						})}
+					</p> */}
+					<p className='text-gray-300'>
+						<span className='font-bold'>Last Login: </span>
+
+						{formatDate(user.lastLogin)}
+					</p>
+				</motion.div>
+
+                <motion.div
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ delay: 0.6 }}
+				className='mt-4'
+			>
+				<motion.button
+					whileHover={{ scale: 1.05 }}
+					whileTap={{ scale: 0.95 }}
+					onClick={handleLogout}
+					className='w-full py-3 px-4 bg-gradient-to-r from-red-500 to-red-600 text-white 
+				font-bold rounded-lg shadow-lg hover:from-red-600 hover:to-red-700
+				 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900'
+				>
+					Logout
+				</motion.button>
+			</motion.div>
+
+        </div>
+
+
+    </motion.div>
+
+
+  )
+}
+
+export default HomePage;
