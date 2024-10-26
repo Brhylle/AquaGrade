@@ -88,7 +88,7 @@ const HomePage = () => {
               position: 'absolute',
               top: '10.5%',
               left: '35%',
-              color: isDarkMode ? "white" : "#b30000",
+              color: isDarkMode ? "#D6D6D6" : "#b30000",
               fontFamily: "Atype-Medium, sans-serif",
               marginBottom: '0.5rem',
               transition: "background-color 0.5s, color 0.5s",
@@ -124,7 +124,7 @@ const HomePage = () => {
               position: 'absolute',
               top: '13.7%',
               right: '28.6%',
-              color: isDarkMode ? "white" : "#b30000",
+              color: isDarkMode ? "#D6D6D6" : "#b30000",
               fontFamily: "Atype-Medium, sans-serif",
               marginBottom: '0.5rem',
               transition: "background-color 0.5s, color 0.5s",
@@ -143,7 +143,11 @@ const HomePage = () => {
             GET STARTED
           </motion.button>
 
-          <FaChevronDown className="mt-8 text-white text-2xl animate-bounce" />
+          <FaChevronDown
+            className={`mt-8 text-2xl animate-bounce ${
+              isDarkMode ? "text-white" : "text-[#4a0404]"
+            }`}
+          />
         </div>
 
         
