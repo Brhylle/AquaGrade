@@ -26,6 +26,18 @@
 
 ---
 
+## 📩 Contact Us
+
+- Python 3.8+
+- PyTorch 1.8+
+- Detectron2
+- OpenCV
+- NumPy
+- pandas
+- tqdm
+
+---
+
 ## 🧱 Contributor's Wall
 <a href="https://github.com/Brhylle/AquaGrade/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Brhylle/AquaGrade" />
