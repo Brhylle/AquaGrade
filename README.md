@@ -21,18 +21,22 @@
 - Detectron2
 - OpenCV
 - NumPy
-- pandas
-- tqdm
+- TikTok
 
 ---
 
+## Buy Us A Coffee
+
+- Ko-Fi
+- Patreon
+
 ## 📩 Contact Us
 
-- Python 3.8+
-- PyTorch 1.8+
-- Detectron2
-- OpenCV
-- NumPy
+- Facebook
+- Instagram
+- X
+- Youtube
+- LinkedIn
 - pandas
 - tqdm
 
