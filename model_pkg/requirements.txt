@@ -1,3 +1,8 @@
+ipykernel
+
+albumentations
+opencv-python
+
 # Numerical and Scientific Computing Libraries
 numpy              # Fundamental package for array computing with Python.
 
@@ -10,21 +15,20 @@ matplotlib         # Comprehensive library for creating static, animated, and in
 # Data Manipulation Library
 pandas             # Data analysis and manipulation library; provides data structures and operations for manipulating numerical tables and time series.
 
+pycocotools-windows
+
 # Progress Bar Library
 tqdm               # Library for adding progress bars to loops in Python.
-
-# Documentation and Report Generation 
-python-docx        # Library to create, read, and write Microsoft Word .docx files.
 
 # Deep Learning Libraries
 torch              # PyTorch deep learning framework; used for building and training neural networks.
 torchvision        # PyTorch library with popular datasets, model architectures, and image transformations for computer vision.
 torchmetrics       # Library providing metrics for evaluating machine learning models in PyTorch.
+torchaudio
+pytorch-lightning
+
+seaborn
+tensorboard
 
 # Machine Learning and Data Science Libraries
 scikit-learn       # Library for machine learning, including tools for model training, evaluation, and cross-validation.
-
-# YAML Parsing Library
-pyyaml             # Library for parsing YAML (YAML Ain't Markup Language), a human-readable data serialization standard.
-
-wandb
