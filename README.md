@@ -21,7 +21,6 @@
 - Detectron2
 - OpenCV
 - NumPy
-- TikTok
 
 ---
 
@@ -37,8 +36,7 @@
 - X
 - Youtube
 - LinkedIn
-- pandas
-- tqdm
+- TikTok
 
 ---
 
