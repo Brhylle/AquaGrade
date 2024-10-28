@@ -25,7 +25,7 @@
 
 ---
 
-## Buy Us A Coffee
+## 🍵 Buy Us A Tea
 
 - Ko-Fi
 - Patreon
