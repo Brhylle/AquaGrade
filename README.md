@@ -1,4 +1,5 @@
 # 🐟 AquaGrade
+[Social Preview]()
 
 **AquaGrade** is a deep learning model package designed for grading fish parts via instance segmentation, leveraging the **Mask R-CNN** architecture. It specializes in segmenting and grading key parts of the fish such as the gills, eyes, and skin, based on industry standards like the FAO demerit pointing system.
 
