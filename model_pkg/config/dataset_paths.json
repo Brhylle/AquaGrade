@@ -1,0 +1,5 @@
+{
+    "test": "/content/drive/MyDrive/colab_nb/aquagrade_pkg/data/annotated/dataset/test/images",
+    "train": "/content/drive/MyDrive/colab_nb/aquagrade_pkg/data/annotated/dataset/train/images",
+    "valid": "/content/drive/MyDrive/colab_nb/aquagrade_pkg/data/annotated/dataset/valid/images"
+}
