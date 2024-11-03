@@ -119,7 +119,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
           maxWidth: "300px", 
         }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+        Passionate about creating intuitive and responsive user interfaces. Specializes in React and modern frontend frameworks, with a keen eye for design and user experience. Always exploring new ways to enhance web applications.
       </div>
 
       <div
@@ -176,7 +176,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
           maxWidth: "300px", 
         }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+        Dedicated to pushing the boundaries of machine learning and AI. Enjoys working with neural networks and developing innovative solutions for complex problems. Constantly learning and implementing cutting-edge ML technologies.
       </div>
 
       <div
@@ -234,7 +234,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
           maxWidth: "300px", 
         }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+        Expert in building robust and scalable backend systems. Passionate about API design, database optimization, and server architecture. Loves solving complex backend challenges and ensuring smooth data flow throughout applications.
       </div>
     
       <div
