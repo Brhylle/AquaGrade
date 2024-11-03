@@ -123,14 +123,14 @@ const Navbar = ({ isDarkMode }) => {
         </div>
 
         <span className={`${isDarkMode ? 'text-gray-500' : 'text-gray-300'}`}>|</span>
-        <Link
+        {/* <Link
           to="/reviews"
           className={`${isDarkMode ? 'text-gray-300' : 'text-red-700'} relative font-semibold group`}
           style={{ fontFamily: 'Poppins-bold, sans-serif' }}
         >
           REVIEWS
           <span className="block absolute left-1/2 transform -translate-x-1/2 bottom-{-1} h-0.5 bg-red-600 w-0 group-hover:w-full transition-all duration-300 ease-in-out"></span>
-        </Link>
+        </Link> */}
       </div>
 
       {/* Right side - Icons and Button */}

@@ -574,7 +574,7 @@ const HomePage = () => {
                       color: isDarkMode ? '#D1D5DB' : '#b30000',
                       fontFamily: "Poppins-Medium, sans-serif"
                     }}>
-                      Frontend Engineer
+                      Frontend Developer
                     </p>
                   </div>
 
@@ -632,7 +632,7 @@ const HomePage = () => {
                       color: isDarkMode ? '#D1D5DB' : '#b30000',
                       fontFamily: "Poppins-Medium, sans-serif"
                     }}>
-                      Backend Engineer
+                      Backend Developer
                     </p>
                   </div>
                 </div>
