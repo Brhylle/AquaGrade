@@ -16,9 +16,9 @@ import FloatingShape from "./components/FloatingShape"
 import SignUpPage from "./pages/SignUpPage"
 import LoginPage from "./pages/LoginPage"
 import EmailVerificationPage from "./pages/EmailVerificationPage";
-import CnnPage from "./pages/CNNPage";
 import TeamPage from "./pages/TeamPage";
 import ScanPage from "./pages/ScanPage";
+import AccountManagement from "./pages/AccountManagement";
 
 // STORES :
 import { Toaster } from "react-hot-toast";
@@ -118,12 +118,6 @@ function App() {
             <ResetPasswordPage />
           </RedirectAuthenticatedUser>
         }/>
-        <Route path='/cnn' element={
-          <div>
-            {/* <Navbar /> Ensure Navbar is rendered on the CNN page */}
-            <CnnPage isDarkMode={isDarkMode} toggleTheme={toggleTheme}/>
-          </div>
-        }/>
         <Route path='/team' element={
           <div>
             {/* <Navbar /> Ensure Navbar is rendered on the CNN page */}
@@ -138,6 +132,12 @@ function App() {
           </div>
           }
         />
+
+        <Route path="/account-management" element={
+          <div>
+            <AccountManagement isDarkMode={isDarkMode} />
+          </div>
+        }/>
       </Routes>
 
       <Toaster />

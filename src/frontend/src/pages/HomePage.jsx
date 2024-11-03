@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useAuthStore } from "../store/authStore";
 import { FaSun, FaMoon, FaSignOutAlt, FaChevronDown } from 'react-icons/fa'; 
-import { useNavigate } from "react-router-dom"; 
 import backgroundImage from '../assets/background_aq.png';
 import FloatingShape from "../components/FloatingShape";
 import Navbar from "../components/Navbar";
@@ -12,12 +11,18 @@ import fishImage from '../assets/fishimage.png';
 import Footer from "../components/Footer";
 
 const HomePage = () => {
-  const navigate = useNavigate();
   const { logout } = useAuthStore(); 
   const [isDarkMode, setIsDarkMode] = useState(true);
-  
+  const [showModal, setShowModal] = useState(false);
+  const handleCNNClick = () => {
+    setShowModal(true);
+  };
   const handleLogout = () => {
     logout();
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   const toggleTheme = () => {
@@ -162,7 +167,7 @@ const HomePage = () => {
           <div
             className="absolute top-[16%] right-[36%] w-[350px] h-[320px] rounded-[40px] z-0"
             style={{ backgroundColor: isDarkMode ? '#1F1D1D' : lightModeColor, opacity: '0.5',
-            transition: "background-color 0.7s, color 0.s", }}
+            transition: "background-color 0.7s, color 0.7s", }}
           ></div>
 
           <div
@@ -219,10 +224,63 @@ const HomePage = () => {
                 backgroundColor: '#b30000',
                 transition: "background-color 0.5s, color 0.5s",
               }}
-              onClick={() => navigate("/cnn")}
+              onClick={handleCNNClick}
+ 
             >
               Cool! What is CNN?
             </motion.button>
+            {showModal && (
+              <motion.div
+                className="fixed inset-0 bg-opacity-50 flex justify-center items-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <motion.div
+                  className="bg-white p-6 rounded-xl shadow-lg relative"
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ ease: "easeInOut", duration: 0.5 }}
+                >
+                  <h2
+                    className="text-xl font-bold mb-4"
+                    style={{
+                      fontFamily: "Poppins-Bold, sans-serif",
+                      color: "#000000",
+                      textAlign: "center",
+                      transition: "color 0.5s",
+                    }}
+                  >
+                    What is a Convolutional Neural Network (CNN)?
+                  </h2>
+                  <p
+                    style={{
+                      fontFamily: "Poppins-Medium, sans-serif",
+                      color: "#000000",
+                      fontSize: "14px",
+                      textAlign: "justify",
+                      transition: "color 0.5s",
+                    }}
+                  >
+                    A <b>Convolutional Neural Network (CNN)</b> is a neural network designed to process visual imagery, inspired by the human visual cortex. CNNs are used in image and video recognition, object detection, and image segmentation.
+                  </p>
+                  <div
+                    className="absolute top-2 right-2 cursor-pointer text-3xl font-bold"
+                    style={{
+                      color: "#000000",
+                      transition: "color 0.5s",
+                    }}
+                    onClick={closeModal}
+                    onMouseEnter={(e) => e.target.style.color = '#b30000'}
+                    onMouseLeave={(e) => e.target.style.color = '#000000'}
+                  >
+                    &times;
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
           </div>
 
           <motion.div

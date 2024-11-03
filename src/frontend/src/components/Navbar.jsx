@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaEnvelope, FaCog, FaListAlt, FaTimes } from 'react-icons/fa'; // Example icons from react-icons
+import { FaEnvelope, FaCog, FaListAlt, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Navbar = ({ isDarkMode }) => {
@@ -40,6 +40,10 @@ const Navbar = ({ isDarkMode }) => {
 
   const handleQuickScan = () => {
     navigate('/scan'); // Redirect to the ScanPage
+  };
+
+  const handleSettingsClick = () => {
+    navigate('/account-management'); // Redirect to Account Management/History page
   };
 
   return (
@@ -147,7 +151,10 @@ const Navbar = ({ isDarkMode }) => {
           )}
         </div>
 
-        <FaCog className={`text-xs ${isDarkMode ? 'text-white' : 'text-red-600'} hover:text-red-800`} />
+        <FaCog 
+          className={`text-xs ${isDarkMode ? 'text-white' : 'text-red-600'} hover:text-red-800 cursor-pointer`} 
+          onClick={handleSettingsClick} // Add click event for settings
+        />
         <FaListAlt className={`text-xs ${isDarkMode ? 'text-white' : 'text-red-600'} hover:text-red-800`} />
         <button
           className="ml-8 py-2 px-4 text-white font-bold rounded-full transition duration-300"
