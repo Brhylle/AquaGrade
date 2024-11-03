@@ -1,0 +1,12 @@
+train: ../train/images
+val: ../valid/images
+
+nc: 20
+names: ['Bangus-F -6-10-', 'Bangus-NF -0-5-', 'Bangus-VF -11-12-', 'Eye -0-', 'Eye -1-', 'Eye -2-', 'Eye-3-', 'Eye-4-', 'Eye-5-', 'Eye-6-', 'Skin -0-', 'Skin -1-', 'Skin -2-', 'Skin-3-', 'Skin-4-', 'Skin-5-', 'Skin-6-', 'Tilapia-F-6-10-', 'Tilapia-NF-0-5-', 'Tilapia-VF-11-12-']
+
+roboflow:
+  workspace: thesis-sbtll
+  project: fish-freshness-6
+  version: 4
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/thesis-sbtll/fish-freshness-6/dataset/4
