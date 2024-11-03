@@ -159,11 +159,11 @@ const Navbar = ({ isDarkMode }) => {
         <button
           className="ml-8 py-2 px-4 text-white font-bold rounded-full transition duration-300"
           style={{ backgroundColor: '#b30000', fontFamily: 'Poppins-light, sans-serif' }}
-          onMouseEnter={(e) => (e.target.style.backgroundColor = '#a00000')} // Hover state color
-          onMouseLeave={(e) => (e.target.style.backgroundColor = '#b30000')} // Back to original color on leave
-          onClick={handleQuickScan} // Redirect to ScanPage on click
+          onMouseEnter={(e) => (e.target.style.backgroundColor = '#a00000')} 
+          onMouseLeave={(e) => (e.target.style.backgroundColor = '#b30000')} 
+          onClick={handleQuickScan} 
         >
-          QUICK SCAN
+          SCAN A FISH
         </button>
       </div>
 
