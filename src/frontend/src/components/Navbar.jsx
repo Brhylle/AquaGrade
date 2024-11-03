@@ -161,7 +161,10 @@ const Navbar = ({ isDarkMode }) => {
           style={{ backgroundColor: '#b30000', fontFamily: 'Poppins-light, sans-serif' }}
           onMouseEnter={(e) => (e.target.style.backgroundColor = '#a00000')} 
           onMouseLeave={(e) => (e.target.style.backgroundColor = '#b30000')} 
-          onClick={handleQuickScan} 
+          onClick={() => {
+            alert('The system is currently capable only of scanning 3 fish: galunggong, bangus, and tilapia.');
+            window.location.href = '/scan';
+          }} 
         >
           SCAN A FISH
         </button>
