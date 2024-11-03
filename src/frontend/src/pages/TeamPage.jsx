@@ -2,11 +2,15 @@ import { motion } from "framer-motion";
 import { FaSun, FaMoon, FaCoffee} from 'react-icons/fa';
 import Navbar from "../components/Navbar";
 import FloatingShape from "../components/FloatingShape"; 
+import backend from "../assets/bck_ID.png";
+import mlengineer from "../assets/ml_ID.png";
+import frontend from "../assets/frnt_ID.jpg";
+import { Avatar } from 'flowbite-react';
 
 const TeamPage = ({ isDarkMode, toggleTheme }) => {
 
   const circleColor = isDarkMode ? "#1F1D1D" : "#C92525";
-  const shapeColor = isDarkMode ? "bg-blue-300" : "bg-white";
+  const shapeColor = isDarkMode ? "bg-blue-300" : "bg-rose-200";
 
   return (
     <motion.div
@@ -141,6 +145,20 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
       ></div>
 
       {/* Ml Engineer Section */}
+      <div className="absolute bottom-[12%] left-[63%] transform scale-150 z-10">
+        <div className="absolute inset-0 rounded-full blur-lg"
+             style={{ 
+               background: 'white',
+               opacity: 0.6,
+             }}
+        />
+        <Avatar
+          img={mlengineer}
+          size="xl"
+          rounded
+          className="relative z-10 transition-transform duration-300 ease-in-out"
+        />
+      </div>
 
       <div
         className={`absolute bottom-[23%] left-[43%] flex items-center justify-center 
@@ -199,6 +217,22 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
 
       {/* For backend section */}
   
+      <div className="absolute bottom-[-33%] left-[12%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.42)' }}>
+        <div className="relative">
+          <div className="absolute inset-0 rounded-full blur-lg"
+               style={{ 
+                 background: 'white', // Darker shade of blue
+                 opacity: 0.6, // Slightly increase opacity for a darker effect
+               }}
+          />
+          <Avatar
+            img={backend}
+            size="lg"
+            rounded
+          />
+        </div>
+      </div>
+
       <div
         className={`absolute bottom-[-9%] left-[44%] flex items-center justify-center 
           ${isDarkMode ? 'text-white border-white' : 'text-red-500 border-red-500'}`}
@@ -215,11 +249,10 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
       </div>
 
       <div
-        className={`absolute bottom-[-16%] left-[44%] ${isDarkMode ? 'text-white' : 'text-red-500'}`} 
+        className={`absolute bottom-[-16%] left-[44%] ${isDarkMode ? 'text-white' : 'text-red-500'}`}
         style={{
           fontFamily: "Atype-Medium, sans-serif",
           fontSize: "3rem", 
-
         }}
       >
         BackEnd Dev
@@ -260,6 +293,61 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
           zIndex: 1, 
         }}
       ></div>
+
+      {/* Frontend Avatar Section */}
+      <div className="absolute bottom-[50%] left-[24%] transform scale-150 z-10">
+        <div className="absolute inset-0 rounded-full blur-lg"
+             style={{ 
+               background: 'white',
+               opacity: 0.6,
+             }}
+        />
+        <Avatar
+          img={frontend}
+          size="xl"
+          rounded
+          bordered
+          className="relative z-10 transition-transform duration-300 ease-in-out"
+        />
+      </div>
+
+      <div
+        className={`absolute bottom-[60%] left-[46%] flex items-center justify-center 
+          ${isDarkMode ? 'text-white border-white' : 'text-red-500 border-red-500'}`}
+        style={{
+          fontFamily: "Poppins-Medium, sans-serif",
+          fontSize: "0.7rem", 
+          border: "2px solid",
+          borderRadius: "9999px",
+          padding: "0.3rem 0.5rem",
+          display: "inline-block",
+        }}
+      >
+        Aaron De Leon
+      </div>
+
+      <div
+        className={`absolute bottom-[54%] left-[46%] ${isDarkMode ? 'text-white' : 'text-red-500'}`}
+        style={{
+          fontFamily: "Atype-Medium, sans-serif",
+          fontSize: "3rem", 
+        }}
+      >
+        FrontEnd Dev
+      </div>
+
+
+      <div
+        className={`absolute bottom-[49%] left-[46%] text-left
+          ${isDarkMode ? 'text-gray-400' : 'text-gray-700'}`}
+        style={{
+          fontFamily: "Poppins-Regular, sans-serif",
+          fontSize: "0.7rem", 
+          maxWidth: "300px", 
+        }}
+      >
+        Passionate about creating intuitive and responsive user interfaces. Specializes in React and modern frontend frameworks, with a keen eye for design and user experience. Always exploring new ways to enhance web applications.
+      </div>
 
       {/* Buy Us a Coffee Section */}
       <div className="fixed bottom-4 right-[5%] flex items-center z-50 group"  
