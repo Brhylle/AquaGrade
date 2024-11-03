@@ -1,14 +1,26 @@
 import { useState } from "react";
+import { Avatar } from 'flowbite-react';
 import { motion } from "framer-motion";
 import { useAuthStore } from "../store/authStore";
 import { FaSun, FaMoon, FaSignOutAlt, FaChevronDown } from 'react-icons/fa'; 
 import backgroundImage from '../assets/background_aq.png';
 import FloatingShape from "../components/FloatingShape";
 import Navbar from "../components/Navbar";
+import mlengineer from "../assets/gm_ID.jpg";
+import backend from "../assets/rcmd_ID.jpg";
+import frontend from "../assets/arn_ID.png";
 import findfreshnessImage from '../assets/fish-eyes-body.png';
 import featuresImage from '../assets/cnn.png';
 import fishImage from '../assets/fishimage.png';
 import Footer from "../components/Footer";
+
+// First, add this CSS animation at the top of your file or in your CSS file
+const sparkleKeyframes = `
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.5) rotate(180deg); }
+  }
+`;
 
 const HomePage = () => {
   const { logout } = useAuthStore(); 
@@ -45,6 +57,7 @@ const HomePage = () => {
         
       }}
     >
+      <style>{sparkleKeyframes}</style>
       <Navbar isDarkMode={isDarkMode} />
 
       
@@ -448,75 +461,188 @@ const HomePage = () => {
 
             <div className="flex flex-col md:flex-row justify-start items-start md:w-full relative z-10 space-x-8 pl-16">
               <div className="flex flex-col items-center space-y-2">
-                <div
-                  className="w-32 h-32 rounded-full bg-red-800"
-                  style={{
-                    backgroundColor: isDarkMode ? "#b30000" : "#b30000",
-                    transition: "background-color 0.5s, color 0.5s",
-                  }}
-                ></div>
-                <p
-                  className="text-center"
-                  style={{
-                    fontSize: "12px",
-                    marginTop: "20px",
-                    fontFamily: "Poppins-Bold, sans-serif",
-                    color: isDarkMode ? "white" : "red",
-                    transition: "background-color 0.5s, color 0.5s",
-                  }}
-                >
-                  Frontend
-                </p>
+                <div className="flex flex-wrap gap-8">
+                  <div className="flex flex-col items-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="relative group"
+                    >
+                      <div className="absolute inset-0 rounded-full blur-lg transform scale-110"
+                           style={{ 
+                             background: isDarkMode 
+                               ? 'linear-gradient(to right, #ef4444, #ef4444)' 
+                               : 'linear-gradient(to right, #ff0000, #b30000)'
+                           }}
+                      />
+                      {/* Increased number of Sparkle elements */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
+                        {[...Array(24)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-3 h-3 transform rotate-45"
+                            style={{
+                              top: `${Math.random() * 120 - 10}%`, // Extended range for more spread
+                              left: `${Math.random() * 120 - 10}%`,
+                              background: '#ff0000',
+                              animation: `sparkle ${0.5 + Math.random() * 1}s ease-in-out ${Math.random() * 0.5}s infinite`,
+                              boxShadow: '0 0 15px rgba(255,0,0,0.9)', // Increased glow
+                            }}
+                          />
+                        ))}
+                        {/* Additional smaller sparkles */}
+                        {[...Array(16)].map((_, i) => (
+                          <div
+                            key={`small-${i}`}
+                            className="absolute w-2 h-2 transform rotate-45"
+                            style={{
+                              top: `${Math.random() * 120 - 10}%`,
+                              left: `${Math.random() * 120 - 10}%`,
+                              background: '#ff6666', // Lighter red for variety
+                              animation: `sparkle ${0.3 + Math.random() * 0.7}s ease-in-out ${Math.random() * 0.5}s infinite`,
+                              boxShadow: '0 0 12px rgba(255,102,102,0.9)',
+                            }}
+                          />
+                        ))}
+                      </div>
+                      <Avatar
+                        img={mlengineer}
+                        alt="ML Engineer"
+                        rounded
+                        size="lg"
+                        style={{ width: '120px', height: '120px', position: 'relative', zIndex: 1 }}
+                      />
+                    </motion.div>
+                    <p className="mt-8 text-sm font-semibold" style={{ 
+                      color: isDarkMode ? '#D1D5DB' : '#b30000',
+                      fontFamily: "Poppins-Medium, sans-serif"
+                    }}>
+                      ML Engineer
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col items-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="relative group"
+                    >
+                      <div className="absolute inset-0 rounded-full blur-lg transform scale-110"
+                           style={{ 
+                             background: isDarkMode 
+                               ? 'linear-gradient(to right, #ef4444, #ef4444)' 
+                               : 'linear-gradient(to right, #ff0000, #b30000)'
+                           }}
+                      />
+                      {/* Increased number of Sparkle elements */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
+                        {[...Array(24)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-3 h-3 transform rotate-45"
+                            style={{
+                              top: `${Math.random() * 120 - 10}%`, // Extended range for more spread
+                              left: `${Math.random() * 120 - 10}%`,
+                              background: '#ff0000',
+                              animation: `sparkle ${0.5 + Math.random() * 1}s ease-in-out ${Math.random() * 0.5}s infinite`,
+                              boxShadow: '0 0 15px rgba(255,0,0,0.9)', // Increased glow
+                            }}
+                          />
+                        ))}
+                        {/* Additional smaller sparkles */}
+                        {[...Array(16)].map((_, i) => (
+                          <div
+                            key={`small-${i}`}
+                            className="absolute w-2 h-2 transform rotate-45"
+                            style={{
+                              top: `${Math.random() * 120 - 10}%`,
+                              left: `${Math.random() * 120 - 10}%`,
+                              background: '#ff6666', // Lighter red for variety
+                              animation: `sparkle ${0.3 + Math.random() * 0.7}s ease-in-out ${Math.random() * 0.5}s infinite`,
+                              boxShadow: '0 0 12px rgba(255,102,102,0.9)',
+                            }}
+                          />
+                        ))}
+                      </div>
+                      <Avatar
+                        img={frontend}
+                        alt="Frontend Engineer"
+                        rounded
+                        size="lg"
+                        style={{ width: '120px', height: '120px', position: 'relative', zIndex: 1 }}
+                      />
+                    </motion.div>
+                    <p className="mt-8 text-sm font-semibold" style={{ 
+                      color: isDarkMode ? '#D1D5DB' : '#b30000',
+                      fontFamily: "Poppins-Medium, sans-serif"
+                    }}>
+                      Frontend Engineer
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col items-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="relative group"
+                    >
+                      <div className="absolute inset-0 rounded-full blur-lg transform scale-110"
+                           style={{ 
+                             background: isDarkMode 
+                               ? 'linear-gradient(to right, #ef4444, #ef4444)' 
+                               : 'linear-gradient(to right, #ff0000, #b30000)'
+                           }}
+                      />
+                      {/* Increased number of Sparkle elements */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100">
+                        {[...Array(24)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-3 h-3 transform rotate-45"
+                            style={{
+                              top: `${Math.random() * 120 - 10}%`, // Extended range for more spread
+                              left: `${Math.random() * 120 - 10}%`,
+                              background: '#ff0000',
+                              animation: `sparkle ${0.5 + Math.random() * 1}s ease-in-out ${Math.random() * 0.5}s infinite`,
+                              boxShadow: '0 0 15px rgba(255,0,0,0.9)', // Increased glow
+                            }}
+                          />
+                        ))}
+                        {/* Additional smaller sparkles */}
+                        {[...Array(16)].map((_, i) => (
+                          <div
+                            key={`small-${i}`}
+                            className="absolute w-2 h-2 transform rotate-45"
+                            style={{
+                              top: `${Math.random() * 120 - 10}%`,
+                              left: `${Math.random() * 120 - 10}%`,
+                              background: '#ff6666', // Lighter red for variety
+                              animation: `sparkle ${0.3 + Math.random() * 0.7}s ease-in-out ${Math.random() * 0.5}s infinite`,
+                              boxShadow: '0 0 12px rgba(255,102,102,0.9)',
+                            }}
+                          />
+                        ))}
+                      </div>
+                      <Avatar
+                        img={backend}
+                        alt="Backend Engineer"
+                        rounded
+                        size="lg"
+                        style={{ width: '120px', height: '120px', position: 'relative', zIndex: 1 }}
+                      />
+                    </motion.div>
+                    <p className="mt-8 text-sm font-semibold" style={{ 
+                      color: isDarkMode ? '#D1D5DB' : '#b30000',
+                      fontFamily: "Poppins-Medium, sans-serif"
+                    }}>
+                      Backend Engineer
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="flex flex-col items-center space-y-2">
-                <div
-                  className="w-32 h-32 rounded-full bg-red-800"
-                  style={{
-                    backgroundColor: isDarkMode ? "#b30000" : "#b30000",
-                    transition: "background-color 0.5s, color 0.5s",
-                  }}
-                ></div>
-                <p
-                  className="text-center"
-                  style={{
-                    fontSize: "12px",
-                    fontFamily: "Poppins-Bold, sans-serif",
-                    marginTop: "20px",
-                    color: isDarkMode ? "white" : "red",
-                    transition: "background-color 0.5s, color 0.5s",
-                  }}
-                >
-                  ML Engineer
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center space-y-2">
-                <div
-                  className="w-32 h-32 rounded-full bg-red-800"
-                  style={{
-                    backgroundColor: isDarkMode ? "#b30000" : "#b30000",
-                    transition: "background-color 0.5s, color 0.5s",
-                  }}
-                ></div>
-                <p
-                  className="text-center"
-                  style={{
-                    fontSize: "12px",
-                    fontFamily: "Poppins-Bold, sans-serif",
-                    marginTop: "20px",
-                    color: isDarkMode ? "white" : "red",
-                    transition: "background-color 0.5s, color 0.5s",
-                  }}
-                >
-                  Backend
-                </p>
-              </div>
 
               <div className="absolute right-[-33%] top-[37%] transform -translate-y-1/2">
                 <img
                   src={fishImage}
-                  alt="Backend Developer Image"
+                  alt="Fish Image"
                   className="w-80 h-80 object-contain"
                   style={{ right: "200px", maxWidth: '200%', maxHeight: '90%',
                   transition: "background-color 0.5s, color 0.5s",}}
