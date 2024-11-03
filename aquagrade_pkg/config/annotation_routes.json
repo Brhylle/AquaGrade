@@ -1,0 +1,4 @@
+{
+    "instances_train": "/content/drive/MyDrive/colab_nb/aquagrade_pkg/dataset/annotations/instances_train.json",
+    "instances_valid": "/content/drive/MyDrive/colab_nb/aquagrade_pkg/dataset/annotations/instances_valid.json"
+}
