@@ -145,20 +145,23 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
       ></div>
 
       {/* Ml Engineer Section */}
-      <div className="absolute bottom-[12%] left-[63%] transform scale-150 z-10">
-        <div className="absolute inset-0 rounded-full blur-lg"
-             style={{ 
-               background: 'white',
-               opacity: 0.6,
-             }}
-        />
-        <Avatar
-          img={mlengineer}
-          size="xl"
-          rounded
-          className="relative z-10 transition-transform duration-300 ease-in-out"
-        />
+      <div className="absolute bottom-[13%] left-[65%] z-10 transition-transform duration-300" style={{ transform: 'scale(2.3)' }}>
+        <div className="relative">
+          <div className="absolute inset-0 rounded-full blur-lg"
+               style={{ 
+                 background: 'white',
+                 opacity: 0.6,
+               }}
+          />
+          <Avatar
+            img={mlengineer}
+            size="lg"
+            rounded
+          />
+        </div>
       </div>
+
+
 
       <div
         className={`absolute bottom-[23%] left-[43%] flex items-center justify-center 
@@ -217,12 +220,12 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
 
       {/* For backend section */}
   
-      <div className="absolute bottom-[-33%] left-[12%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.42)' }}>
+      <div className="absolute bottom-[-19%] left-[26%] z-10 transition-transform duration-300" style={{ transform: 'scale(2.2)' }}>
         <div className="relative">
           <div className="absolute inset-0 rounded-full blur-lg"
                style={{ 
-                 background: 'white', // Darker shade of blue
-                 opacity: 0.6, // Slightly increase opacity for a darker effect
+                 background: 'white',
+                 opacity: 0.6,
                }}
           />
           <Avatar
@@ -295,20 +298,20 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
       ></div>
 
       {/* Frontend Avatar Section */}
-      <div className="absolute bottom-[50%] left-[24%] transform scale-150 z-10">
-        <div className="absolute inset-0 rounded-full blur-lg"
-             style={{ 
-               background: 'white',
-               opacity: 0.6,
-             }}
-        />
-        <Avatar
-          img={frontend}
-          size="xl"
-          rounded
-          bordered
-          className="relative z-10 transition-transform duration-300 ease-in-out"
-        />
+      <div className="absolute bottom-[53%] left-[25%] z-10 transition-transform duration-300" style={{ transform: 'scale(2.3)' }}>
+        <div className="relative">
+          <div className="absolute inset-0 rounded-full blur-lg"
+               style={{ 
+                 background: 'white',
+                 opacity: 0.6,
+               }}
+          />
+          <Avatar
+            img={frontend}
+            size="lg"
+            rounded
+          />
+        </div>
       </div>
 
       <div
