@@ -51,6 +51,46 @@ const ScanPage = ({ isDarkMode, toggleTheme }) => {
     }
   };
 
+//   const processFrame = async () => {
+//     if (!videoRef.current) return;
+
+//     try {
+//         setIsScanning(true);
+//         setError(null);
+        
+//         // Capture video frame
+//         const canvas = document.createElement('canvas');
+//         canvas.width = videoRef.current.videoWidth;
+//         canvas.height = videoRef.current.videoHeight;
+//         const ctx = canvas.getContext('2d');
+//         ctx.drawImage(videoRef.current, 0, 0);
+        
+//         // Convert to blob
+//         const blob = await new Promise(resolve => 
+//             canvas.toBlob(resolve, 'image/jpeg', 0.95)
+//         );
+
+//         // Send to API
+//         const formData = new FormData();
+//         formData.append('image', blob);
+
+//         const response = await fetch('http://localhost:5000/api/scan-fish', {
+//             method: 'POST',
+//             body: formData
+//         });
+
+//         if (!response.ok) throw new Error('Scan failed');
+
+//         const result = await response.json();
+//         setScanResult(result);
+//     } catch (error) {
+//         console.error('Scanning error:', error);
+//         setError('Failed to process scan. Please try again.');
+//     } finally {
+//         setIsScanning(false);
+//     }
+// };
+
   return (
     <>
       {/* Add the keyframes to the document */}
@@ -142,7 +182,6 @@ const ScanPage = ({ isDarkMode, toggleTheme }) => {
                 transition: 'all 0.2s ease'
               }}
               whileHover={{ 
-                scale: 1.03,
                 boxShadow: isDarkMode 
                   ? '0 0 20px rgba(255, 255, 255, 0.8)'
                   : '0 0 20px rgba(0, 0, 0, 0.8)',
@@ -180,7 +219,6 @@ const ScanPage = ({ isDarkMode, toggleTheme }) => {
                 transition: 'all 0.2s ease'
               }}
               whileHover={{ 
-                scale: 1.03,
                 boxShadow: isDarkMode 
                   ? '0 0 20px rgba(255, 255, 255, 0.8)'
                   : '0 0 20px rgba(0, 0, 0, 0.8)',
@@ -202,7 +240,6 @@ const ScanPage = ({ isDarkMode, toggleTheme }) => {
                 transition: 'all 0.2s ease'
               }}
               whileHover={{ 
-                scale: 1.03,
                 boxShadow: isDarkMode 
                   ? '0 0 20px rgba(255, 255, 255, 0.8)'
                   : '0 0 20px rgba(0, 0, 0, 0.8)',
@@ -226,7 +263,6 @@ const ScanPage = ({ isDarkMode, toggleTheme }) => {
                 transition: 'all 0.2s ease'
               }}
               whileHover={{ 
-                scale: 1.03,
                 boxShadow: isDarkMode 
                   ? '0 0 20px rgba(255, 255, 255, 0.8)'
                   : '0 0 20px rgba(0, 0, 0, 0.8)',

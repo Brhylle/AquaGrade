@@ -9,7 +9,7 @@ const Navbar = ({ isDarkMode }) => {
   const [popupContent, setPopupContent] = useState('');
   const [showPopup, setShowPopup] = useState(false);
 
-  const navigate = useNavigate(); // Initialize useNavigate for redirection
+  const navigate = useNavigate();
 
   const handleFeatureClick = (feature) => {
     let content = {
@@ -35,20 +35,16 @@ const Navbar = ({ isDarkMode }) => {
     }
 
     setPopupContent(content);
-    setShowPopup(true); // No more auto-close, user closes it manually
+    setShowPopup(true);
   };
 
-  const handleQuickScan = () => {
-    navigate('/scan'); // Redirect to the ScanPage
-  };
 
   const handleSettingsClick = () => {
-    navigate('/account-management'); // Redirect to Account Management/History page
+    navigate('/admin');
   };
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center py-4 px-8 shadow-lg ${isDarkMode ? 'bg-black' : 'bg-white'}`}>
-      {/* Left side - Links */}
       <div className="flex items-center space-x-10 text-xxs" style={{ fontFamily: 'Poppins-light, sans-serif', transition: "background-color 0.5s, color 0.5s" }}>
         <Link
           to="/signup"
@@ -69,7 +65,6 @@ const Navbar = ({ isDarkMode }) => {
         </Link>
         <span className={`${isDarkMode ? 'text-gray-500' : 'text-gray-300'}`}>|</span>
 
-        {/* Features Dropdown */}
         <div
           className="relative"
           onMouseEnter={() => setShowFeaturesDropdown(true)}
@@ -83,7 +78,6 @@ const Navbar = ({ isDarkMode }) => {
             <span className="block absolute left-1/2 transform -translate-x-1/2 bottom-{-1} h-0.5 bg-red-600 w-0 group-hover:w-full transition-all duration-300 ease-in-out"></span>
           </span>
 
-          {/* Dropdown with correct positioning and background */}
           {showFeaturesDropdown && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -91,13 +85,13 @@ const Navbar = ({ isDarkMode }) => {
               exit={{ opacity: 0, y: -10 }}
               className="absolute text-black dark:text-white rounded-lg shadow-lg p-4 z-50"
               style={{
-                top: '110%', // Show directly below the FEATURES link
+                top: '110%',
                 left: '0',
                 width: '200px',
                 boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.15)',
                 background: isDarkMode
-                  ? 'linear-gradient(135deg, #232526, #414345)' // Gradient for dark mode (shades of gray)
-                  : 'linear-gradient(135deg, #ff7e5f, #ff3f5e)', // Red gradient for light mode
+                  ? 'linear-gradient(135deg, #232526, #414345)'
+                  : 'linear-gradient(135deg, #ff7e5f, #ff3f5e)',
               }}
             >
               <p
@@ -123,19 +117,9 @@ const Navbar = ({ isDarkMode }) => {
         </div>
 
         <span className={`${isDarkMode ? 'text-gray-500' : 'text-gray-300'}`}>|</span>
-        {/* <Link
-          to="/reviews"
-          className={`${isDarkMode ? 'text-gray-300' : 'text-red-700'} relative font-semibold group`}
-          style={{ fontFamily: 'Poppins-bold, sans-serif' }}
-        >
-          REVIEWS
-          <span className="block absolute left-1/2 transform -translate-x-1/2 bottom-{-1} h-0.5 bg-red-600 w-0 group-hover:w-full transition-all duration-300 ease-in-out"></span>
-        </Link> */}
       </div>
 
-      {/* Right side - Icons and Button */}
       <div className="flex items-center space-x-10 text-xs">
-        {/* Email dropdown */}
         <div
           className="relative"
           onMouseEnter={() => setShowContactDropdown(true)}
@@ -153,7 +137,7 @@ const Navbar = ({ isDarkMode }) => {
 
         <FaCog 
           className={`text-xs ${isDarkMode ? 'text-white' : 'text-red-600'} hover:text-red-800 cursor-pointer`} 
-          onClick={handleSettingsClick} // Add click event for settings
+          onClick={handleSettingsClick}
         />
         <FaListAlt className={`text-xs ${isDarkMode ? 'text-white' : 'text-red-600'} hover:text-red-800`} />
         <button
@@ -170,22 +154,20 @@ const Navbar = ({ isDarkMode }) => {
         </button>
       </div>
 
-      {/* Floating Popup */}
       {showPopup && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }} // Start slightly above and hidden
-          animate={{ opacity: 1, y: 0 }} // Animate to fully visible and centered
-          exit={{ opacity: 0, y: 20 }} // Smooth exit going downwards and fading
-          transition={{ duration: 0.5 }} // Transition duration for smoothness
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
           className="fixed inset-0 flex items-center justify-center z-50"
         >
           <motion.div
-            initial={{ opacity: 1 }} // Fully visible when shown
-            exit={{ opacity: 0, scale: 0.9 }} // Shrink and fade out on close
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5 }}
             className="relative p-6 bg-white text-black rounded-lg shadow-lg max-w-md w-full"
           >
-            {/* Close Button */}
             <button
               className="absolute top-2 right-2 text-2xl hover:text-red-500 transition-all"
               onClick={() => setShowPopup(false)}
@@ -193,12 +175,10 @@ const Navbar = ({ isDarkMode }) => {
               <FaTimes />
             </button>
 
-            {/* Popup Title */}
             <h2 className="text-lg font-bold" style={{ fontFamily: 'Poppins-bold, sans-serif' }}>
               {popupContent.title}
             </h2>
 
-            {/* Popup Content */}
             <p className="mt-4 text-sm" style={{ fontFamily: 'Poppins, sans-serif' }}>
               {popupContent.content}
             </p>

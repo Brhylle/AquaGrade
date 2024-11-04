@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useLocation, Navigate, Route, Routes} from "react-router-dom"; // Import useLocation
 
 // FONTS : 
@@ -18,7 +19,7 @@ import LoginPage from "./pages/LoginPage"
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 import TeamPage from "./pages/TeamPage";
 import ScanPage from "./pages/ScanPage";
-import AccountManagement from "./pages/AccountManagement";
+import AdminPage from "./pages/AdminPage";
 
 // STORES :
 import { Toaster } from "react-hot-toast";
@@ -133,9 +134,9 @@ function App() {
           }
         />
 
-        <Route path="/account-management" element={
+        <Route path="/admin" element={
           <div>
-            <AccountManagement isDarkMode={isDarkMode} />
+            <AdminPage />
           </div>
         }/>
       </Routes>
