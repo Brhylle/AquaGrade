@@ -1,12 +1,12 @@
-import { Table, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 
 const AdminPage = ({ isDarkMode, toggleTheme }) => {
   const fishData = [
-    { id: 1, name: 'Salmon', time: '2022-03-01 10:00', evaluation: 'Good' },
-    { id: 2, name: 'Tuna', time: '2022-03-01 11:00', evaluation: 'Fair' },
-    { id: 3, name: 'Trout', time: '2022-03-01 12:00', evaluation: 'Excellent' },
+    { id: 1, name: 'Bangus', time: '2022-03-01 10:00', evaluation: 'Good' },
+    { id: 2, name: 'Tilapia', time: '2022-03-01 11:00', evaluation: 'Fair' },
+    { id: 3, name: 'Galunggong', time: '2022-03-01 12:00', evaluation: 'Excellent' },
     // Add more fish data as needed
   ];
 
@@ -39,34 +39,34 @@ const AdminPage = ({ isDarkMode, toggleTheme }) => {
       <Container style={{ fontFamily: 'Poppins, sans-serif' }}>
         <Row className="my-4">
           <Col>
-            <h1 className="text-center display-3" style={{ fontFamily: 'Poppins-bold, sans-serif', background: 'linear-gradient(to right, black, white)', WebkitBackgroundClip: 'text', color: 'transparent' }}>Admin Dashboard</h1>
-            <p className="text-center lead" style={{ fontFamily: 'Poppins-light, sans-serif' }}>
+            <h1 className="text-center display-3" style={{ fontFamily: 'Poppins-bold, sans-serif', background: 'linear-gradient(to right, black, white)', WebkitBackgroundClip: 'text', color: 'transparent' }}>ADMIN DASHBOARD</h1>
+            <p className="text-center lead text-sm" style={{ fontFamily: 'Poppins-light, sans-serif', color: 'white' }}>
               Welcome to the Admin Dashboard. Here you can monitor and evaluate the fish data.
             </p>
           </Col>
         </Row>
         <Row className="my-4">
           <Col>
-            <Table striped bordered hover className="text-center" style={{ backgroundColor: 'transparent', border: '1px solid #dee2e6' }}>
-              <thead>
+            <table className="table table-striped" style={{ width: '100%', borderCollapse: 'collapse' }}>
+              <thead style={{ backgroundColor: '#333333', color: '#FFFFFF' }}>
                 <tr>
-                  <th>ID</th>
-                  <th>Fish Name</th>
-                  <th>Time</th>
-                  <th>Evaluation</th>
+                  <th style={{ padding: '8px', border: '1px solid #ddd' }}>ID</th>
+                  <th style={{ padding: '8px', border: '1px solid #ddd' }}>Fish Name</th>
+                  <th style={{ padding: '8px', border: '1px solid #ddd' }}>Time</th>
+                  <th style={{ padding: '8px', border: '1px solid #ddd' }}>Evaluation</th>
                 </tr>
               </thead>
               <tbody>
                 {fishData.map(fish => (
-                  <tr key={fish.id}>
-                    <td>{fish.id}</td>
-                    <td>{fish.name}</td>
-                    <td>{fish.time}</td>
-                    <td>{fish.evaluation}</td>
+                  <tr key={fish.id} style={{ backgroundColor: '#E5E7EB' }}>
+                    <td style={{ padding: '8px', border: '1px solid #ddd' }}>{fish.id}</td>
+                    <td style={{ padding: '8px', border: '1px solid #ddd' }}>{fish.name}</td>
+                    <td style={{ padding: '8px', border: '1px solid #ddd' }}>{fish.time}</td>
+                    <td style={{ padding: '8px', border: '1px solid #ddd' }}>{fish.evaluation}</td>
                   </tr>
                 ))}
               </tbody>
-            </Table>
+            </table>
           </Col>
         </Row>
         <Row className="my-4">

@@ -1,7 +1,7 @@
 import { FaHome, FaSun, FaMoon, FaClock, FaCog, FaSignOutAlt, FaVideo } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom'; 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import FloatingShape from '../components/FloatingShape';
 
 // Add this CSS animation at the top of your component, before the ScanPage definition
