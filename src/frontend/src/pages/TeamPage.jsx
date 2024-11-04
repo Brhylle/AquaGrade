@@ -145,7 +145,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
       ></div>
 
       {/* Ml Engineer Section */}
-      <div className="absolute bottom-[13%] left-[65%] z-10 transition-transform duration-300" style={{ transform: 'scale(2.3)' }}>
+      <div className="absolute bottom-[13%] left-[65%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.4)' }}>
         <div className="relative">
           <div className="absolute inset-0 rounded-full blur-lg"
                style={{ 
@@ -164,7 +164,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
 
 
       <div
-        className={`absolute bottom-[23%] left-[43%] flex items-center justify-center 
+        className={`absolute bottom-[23%] left-[43%] flex items-center justify-center cursor-pointer
           ${isDarkMode ? 'text-white border-white' : 'text-red-500 border-red-500'}`}
         style={{
           fontFamily: "Poppins-Medium, sans-serif",
@@ -173,9 +173,41 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
           borderRadius: "9999px",
           padding: "0.3rem 0.5rem",
           display: "inline-block",
+          transition: "transform 0.6s, background-color 0.6s, color 0.6s",
+          transformStyle: "preserve-3d",
+        }}
+        onClick={(e) => {
+          const isFlipped = e.currentTarget.style.transform === "rotateY(180deg)";
+          e.currentTarget.style.transform = isFlipped ? "rotateY(0deg)" : "rotateY(180deg)";
+          e.currentTarget.style.backgroundColor = isFlipped ? "transparent" : "white";
+          e.currentTarget.style.color = isFlipped ? (isDarkMode ? "white" : "red") : "black";
         }}
       >
-        Jheizon Dela Cruz
+        <div style={{ backfaceVisibility: "hidden" }}>
+          Jheizon Dela Cruz
+        </div>
+        <div style={{ 
+          backfaceVisibility: "hidden", 
+          transform: "rotateY(180deg)", 
+          position: "absolute", 
+          top: 0, 
+          left: 0, 
+          width: "100%", 
+          height: "100%", 
+          display: "flex", 
+          alignItems: "center", 
+          justifyContent: "center",
+          whiteSpace: "nowrap",
+        }}>
+          <a 
+            href="https://github.com/Brhylle" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={`${isDarkMode ? 'text-black' : 'text-black'}`}
+          >
+            <span style={{ fontSize: '0.5rem' }}>https://github.com/Brhylle</span>
+          </a>
+        </div>
       </div>
       
       <div
@@ -220,7 +252,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
 
       {/* For backend section */}
   
-      <div className="absolute bottom-[-19%] left-[26%] z-10 transition-transform duration-300" style={{ transform: 'scale(2.2)' }}>
+      <div className="absolute bottom-[-19%] left-[26%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.4)' }}>
         <div className="relative">
           <div className="absolute inset-0 rounded-full blur-lg"
                style={{ 
@@ -237,7 +269,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
       </div>
 
       <div
-        className={`absolute bottom-[-9%] left-[44%] flex items-center justify-center 
+        className={`absolute bottom-[-9%] left-[44%] flex items-center justify-center cursor-pointer
           ${isDarkMode ? 'text-white border-white' : 'text-red-500 border-red-500'}`}
         style={{
           fontFamily: "Poppins-Medium, sans-serif",
@@ -246,9 +278,41 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
           borderRadius: "9999px",
           padding: "0.3rem 0.5rem",
           display: "inline-block",
+          transition: "transform 0.6s, background-color 0.6s, color 0.6s",
+          transformStyle: "preserve-3d",
+        }}
+        onClick={(e) => {
+          const isFlipped = e.currentTarget.style.transform === "rotateY(180deg)";
+          e.currentTarget.style.transform = isFlipped ? "rotateY(0deg)" : "rotateY(180deg)";
+          e.currentTarget.style.backgroundColor = isFlipped ? "transparent" : "white";
+          e.currentTarget.style.color = isFlipped ? (isDarkMode ? "white" : "red") : "black";
         }}
       >
-        Ritchmond Tajarros
+        <div style={{ backfaceVisibility: "hidden" }}>
+          Ritchmond Tajarros
+        </div>
+        <div style={{ 
+          backfaceVisibility: "hidden", 
+          transform: "rotateY(180deg)", 
+          position: "absolute", 
+          top: 0, 
+          left: 0, 
+          width: "100%", 
+          height: "100%", 
+          display: "flex", 
+          alignItems: "center", 
+          justifyContent: "center",
+          whiteSpace: "nowrap",
+        }}>
+          <a 
+            href="https://github.com/RitchmondTajarros" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={`${isDarkMode ? 'text-black' : 'text-black'}`}
+          >
+            <span style={{ fontSize: '0.5rem' }}>https://github.com/tajarrosr</span>
+          </a>
+        </div>
       </div>
 
       <div
@@ -298,7 +362,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
       ></div>
 
       {/* Frontend Avatar Section */}
-      <div className="absolute bottom-[53%] left-[25%] z-10 transition-transform duration-300" style={{ transform: 'scale(2.3)' }}>
+      <div className="absolute bottom-[53%] left-[25%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.3)' }}>
         <div className="relative">
           <div className="absolute inset-0 rounded-full blur-lg"
                style={{ 
@@ -315,7 +379,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
       </div>
 
       <div
-        className={`absolute bottom-[60%] left-[46%] flex items-center justify-center 
+        className={`absolute bottom-[60%] left-[46%] flex items-center justify-center cursor-pointer
           ${isDarkMode ? 'text-white border-white' : 'text-red-500 border-red-500'}`}
         style={{
           fontFamily: "Poppins-Medium, sans-serif",
@@ -324,9 +388,41 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
           borderRadius: "9999px",
           padding: "0.3rem 0.5rem",
           display: "inline-block",
+          transition: "transform 0.6s, background-color 0.6s, color 0.6s",
+          transformStyle: "preserve-3d",
+        }}
+        onClick={(e) => {
+          const isFlipped = e.currentTarget.style.transform === "rotateY(180deg)";
+          e.currentTarget.style.transform = isFlipped ? "rotateY(0deg)" : "rotateY(180deg)";
+          e.currentTarget.style.backgroundColor = isFlipped ? "transparent" : "white";
+          e.currentTarget.style.color = isFlipped ? (isDarkMode ? "white" : "red") : "black";
         }}
       >
-        Aaron De Leon
+        <div style={{ backfaceVisibility: "hidden" }}>
+          Aaron De Leon
+        </div>
+        <div style={{ 
+          backfaceVisibility: "hidden", 
+          transform: "rotateY(180deg)", 
+          position: "absolute", 
+          top: 0, 
+          left: 0, 
+          width: "100%", 
+          height: "100%", 
+          display: "flex", 
+          alignItems: "center", 
+          justifyContent: "center",
+          whiteSpace: "nowrap",
+        }}>
+          <a 
+            href="https://github.com/eyronnnn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={`${isDarkMode ? 'text-black' : 'text-black'}`}
+          >
+            <span style={{ fontSize: '0.5rem' }}>https://github.com/eyronnnn</span>
+          </a>
+        </div>
       </div>
 
       <div
