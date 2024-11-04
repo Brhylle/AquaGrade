@@ -145,7 +145,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
       ></div>
 
       {/* Ml Engineer Section */}
-      <div className="absolute bottom-[13%] left-[65%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.4)' }}>
+      <div className="absolute bottom-[1%] left-[52%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.4)' }}>
         <div className="relative">
           <div className="absolute inset-0 rounded-full blur-lg"
                style={{ 
@@ -252,7 +252,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
 
       {/* For backend section */}
   
-      <div className="absolute bottom-[-19%] left-[26%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.4)' }}>
+      <div className="absolute bottom-[-34%] left-[12%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.36)' }}>
         <div className="relative">
           <div className="absolute inset-0 rounded-full blur-lg"
                style={{ 
@@ -362,7 +362,7 @@ const TeamPage = ({ isDarkMode, toggleTheme }) => {
       ></div>
 
       {/* Frontend Avatar Section */}
-      <div className="absolute bottom-[53%] left-[25%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.3)' }}>
+      <div className="absolute bottom-[34%] left-[9%] z-10 transition-transform duration-300" style={{ transform: 'scale(0.3)' }}>
         <div className="relative">
           <div className="absolute inset-0 rounded-full blur-lg"
                style={{ 
