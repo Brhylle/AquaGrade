@@ -19,7 +19,6 @@ import LoginPage from "./pages/LoginPage"
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 import TeamPage from "./pages/TeamPage";
 import ScanPage from "./pages/ScanPage";
-import AdminPage from "./pages/AdminPage";
 
 // STORES :
 import { Toaster } from "react-hot-toast";
