@@ -8,6 +8,7 @@ const Navbar = ({ isDarkMode }) => {
   const [showContactDropdown, setShowContactDropdown] = useState(false);
   const [popupContent, setPopupContent] = useState('');
   const [showPopup, setShowPopup] = useState(false);
+  const [showEmailPopup, setShowEmailPopup] = useState(false); // New state for email popup
 
   const navigate = useNavigate();
 
@@ -17,20 +18,46 @@ const Navbar = ({ isDarkMode }) => {
       content: ''
     };
 
-    if (feature === 'Feature 1: AI-based Detection') {
+    if (feature === 'Feature 1: CNN Trained Detection') {
       content = {
-        title: 'AI-Based Detection',
-        content: 'AI-Based Detection uses advanced machine learning models to identify objects in real-time.'
+        title: (
+          <h2 style={{ fontFamily: 'Poppins-Bold, sans-serif', color: 'black' }}>
+            CNN Trained Detection
+          </h2>
+        ),
+        content: (
+          <p style={{ fontFamily: 'Poppins-Medium, sans-serif', color: 'black' }}>
+            CNN Trained Detection uses advanced machine learning models to identify objects in real-time.
+          </p>
+        ),
       };
+
     } else if (feature === 'Feature 2: Real-Time Analysis') {
       content = {
-        title: 'Real-Time Analysis',
-        content: 'Real-Time Analysis provides up-to-the-second insights on your data streams.'
+        title: (
+          <h2 style={{ fontFamily: 'Poppins-Bold, sans-serif', color: 'black' }}>
+            Real-Time Analysis
+          </h2>
+        ),
+        content: (
+          <p style={{ fontFamily: 'Poppins-Medium, sans-serif', color: 'black' }}>
+            Real-Time Analysis provides up-to-the-second insights on your data streams.
+          </p>
+        ),
       };
-    } else if (feature === 'Feature 3: Cloud Integration') {
+
+      } else if (feature === 'Feature 3: Cloud Integration') {
       content = {
-        title: 'Cloud Integration',
-        content: 'Cloud Integration allows seamless connectivity with your cloud platforms for enhanced scalability.'
+        title: (
+          <h2 style={{ fontFamily: 'Poppins-Bold, sans-serif', color: 'black' }}>
+            Cloud Integration
+          </h2>
+        ),
+        content: (
+          <p style={{ fontFamily: 'Poppins-Medium, sans-serif', color: 'black' }}>
+            Cloud Integration allows seamless connectivity with your cloud platforms for enhanced scalability.
+          </p>
+        ),
       };
     }
 
@@ -38,14 +65,13 @@ const Navbar = ({ isDarkMode }) => {
     setShowPopup(true);
   };
 
-
-  const handleSettingsClick = () => {
-    // navigate(''); 
+  const handleEmailIconClick = () => {
+    setShowEmailPopup(!showEmailPopup); // Toggle email popup
   };
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center py-4 px-8 shadow-lg ${isDarkMode ? 'bg-black' : 'bg-white'}`}>
-      <div className="flex items-center space-x-10 text-xxs" style={{ fontFamily: 'Poppins-light, sans-serif', transition: "background-color 0.5s, color 0.5s" }}>
+      <div className="flex items-center space-x-10 text-xxs" style={{ fontFamily: 'Poppins, sans-serif', transition: "background-color 0.5s, color 0.5s" }}>
         <Link
           to="/signup"
           className={`${isDarkMode ? 'text-gray-300' : 'text-red-700'} relative font-semibold group`}
@@ -88,30 +114,32 @@ const Navbar = ({ isDarkMode }) => {
                 top: '110%',
                 left: '0',
                 width: '200px',
-                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.15)',
-                background: isDarkMode
-                  ? 'linear-gradient(135deg, #232526, #414345)'
-                  : 'linear-gradient(135deg, #ff7e5f, #ff3f5e)',
+                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.45)',
+                background: isDarkMode ? 'white' : 'black', // Normal black and white background
               }}
             >
               <p
-                className="cursor-pointer hover:bg-gray-100 dark:hover:bg-white dark:hover:text-black p-2 rounded transition-all duration-200 hover:font-bold"
-                onClick={() => handleFeatureClick('Feature 1: AI-based Detection')}
+                style={{ fontFamily: "Poppins-Medium, sans-serif" }}
+                className={`cursor-pointer dark:hover:bg-gray-200 dark:hover:text-black p-2 rounded-4xl transition-all duration-200 hover:font-bold ${isDarkMode ? 'text-black' : 'text-white'}`}
+                onClick={() => handleFeatureClick('Feature 1: CNN Trained Detection')}
               >
-                AI-Based Detection
+                CNN Trained Detection
               </p>
               <p
-                className="cursor-pointer hover:bg-gray-100 dark:hover:bg-white dark:hover:text-black p-2 rounded transition-all duration-200 hover:font-bold"
+                style={{ fontFamily: "Poppins-Medium, sans-serif" }}
+                className={`cursor-pointer dark:hover:bg-gray-200 dark:hover:text-black p-2 rounded-4xl transition-all duration-200 hover:font-bold ${isDarkMode ? 'text-black' : 'text-white'}`}
                 onClick={() => handleFeatureClick('Feature 2: Real-Time Analysis')}
               >
-                Real-Time Analysis
+                Real Time Detection
               </p>
               <p
-                className="cursor-pointer hover:bg-gray-100 dark:hover:bg-white dark:hover:text-black p-2 rounded transition-all duration-200 hover:font-bold"
+                style={{ fontFamily: "Poppins-Medium, sans-serif" }}
+                className={`cursor-pointer dark:hover:bg-gray-200 dark:hover:text-black p-2 rounded-4xl transition-all duration-200 hover:font-bold ${isDarkMode ? 'text-black' : 'text-white'}`}
                 onClick={() => handleFeatureClick('Feature 3: Cloud Integration')}
               >
                 Cloud Integration
               </p>
+
             </motion.div>
           )}
         </div>
@@ -122,23 +150,33 @@ const Navbar = ({ isDarkMode }) => {
       <div className="flex items-center space-x-10 text-xs">
         <div
           className="relative"
-          onMouseEnter={() => setShowContactDropdown(true)}
-          onMouseLeave={() => setShowContactDropdown(false)}
+          onMouseEnter={() => setShowEmailPopup(true)}
+          onMouseLeave={() => setShowEmailPopup(false)}
         >
-          <FaEnvelope className={`text-xs ${isDarkMode ? 'text-white' : 'text-red-600'} hover:text-red-800 cursor-pointer`} />
-          {showContactDropdown && (
-            <div className="absolute right-0 bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-lg p-4 z-50"
-                 style={{ width: '150px', boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.15)' }}>
-              <p className="p-2">Email: contact@domain.com</p>
-              <p className="p-2">Phone: +1234567890</p>
-            </div>
+          <FaEnvelope 
+            className={`text-xs ${isDarkMode ? 'text-white' : 'text-red-600'} hover:text-red-800 cursor-pointer`} 
+            onClick={handleEmailIconClick} 
+          />
+          
+          {/* Email Popup */}
+          {showEmailPopup && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="absolute right-0 top-10 text-black dark:text-white rounded-5xl shadow-lg p-4 z-50"
+              style={{
+                width: '200px',
+                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.15)',
+                background: isDarkMode ? 'white' : 'black', 
+              }}
+            >
+              <p className={`${isDarkMode ? 'text-black' : 'text-white'}`} style={{ fontWeight: 'bold', fontFamily: 'Poppins-Bold, sans-serif' }}>Email</p>
+              <p className={`${isDarkMode ? 'text-black' : 'text-white'}`} style={{ fontSize: 'small', fontFamily: 'Poppins, sans-serif' }}>aquagrade.ai@gmail.com</p>
+            </motion.div>
           )}
         </div>
 
-        <FaCog 
-          className={`text-xs ${isDarkMode ? 'text-white' : 'text-red-600'} hover:text-red-800 cursor-pointer`} 
-          onClick={handleSettingsClick}
-        />
         <FaListAlt className={`text-xs ${isDarkMode ? 'text-white' : 'text-red-600'} hover:text-red-800`} />
         <button
           className="ml-8 py-2 px-4 text-white font-bold rounded-full transition duration-300"
@@ -160,28 +198,22 @@ const Navbar = ({ isDarkMode }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center"
         >
           <motion.div
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.5 }}
-            className="relative p-6 bg-white text-black rounded-lg shadow-lg max-w-md w-full"
+            className="bg-white dark:bg-gray-800 rounded-lg p-8 w-full max-w-2xl relative"
+            style={{
+              background: isDarkMode ? 'white' : 'black', // Normal black and white background
+            }}
           >
+            <h3 className="text-xl font-bold text-black dark:text-white mb-4">{popupContent.title}</h3>
+            <p className="text-base text-gray-800 dark:text-gray-300">{popupContent.content}</p>
             <button
-              className="absolute top-2 right-2 text-2xl hover:text-red-500 transition-all"
               onClick={() => setShowPopup(false)}
+              className="absolute top-0 right-0 mt-4 mr-4 text-gray-500 dark:text-gray-300"
             >
               <FaTimes />
             </button>
-
-            <h2 className="text-lg font-bold" style={{ fontFamily: 'Poppins-bold, sans-serif' }}>
-              {popupContent.title}
-            </h2>
-
-            <p className="mt-4 text-sm" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              {popupContent.content}
-            </p>
           </motion.div>
         </motion.div>
       )}
