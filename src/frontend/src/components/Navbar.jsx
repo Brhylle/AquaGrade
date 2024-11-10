@@ -184,8 +184,8 @@ const Navbar = ({ isDarkMode }) => {
           onMouseEnter={(e) => (e.target.style.backgroundColor = '#a00000')} 
           onMouseLeave={(e) => (e.target.style.backgroundColor = '#b30000')} 
           onClick={() => {
-            alert('The system is currently capable only of scanning 3 fish: galunggong, bangus, and tilapia.');
-            window.location.href = '/scan';
+            alert('The system is currently capable only of scanning 2 fish: bangus, and tilapia.');
+            // window.location.href = '/scan';
           }} 
         >
           SCAN A FISH

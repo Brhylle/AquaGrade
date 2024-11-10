@@ -398,7 +398,7 @@ const HomePage = () => {
                 backgroundColor: '#b30000',
                 transition: "background-color 0.5s, color 0.5s",
               }}
-              onClick={() => window.location.href = './frontend/src/pages/ScanPage.jsx'}
+              // onClick={() => window.location.href = './frontend/src/pages/ScanPage.jsx'}
             >
               Scan!
             </motion.button>

@@ -125,14 +125,14 @@ function App() {
           </div>
         }/>
 
-        <Route path="/scan" element={
+        {/* <Route path="/scan" element={
           <div>
             {/* <Navbar /> */}
             <ScanPage isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-          </div>
+          {/* </div>
           }
-        />
-{/* 
+        / */}
+        {/* 
         <Route path="/admin" element={
           <div>
             <AdminPage />
