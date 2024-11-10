@@ -1,16 +1,14 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { FaEnvelope, FaCog, FaListAlt, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaEnvelope, FaListAlt, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Navbar = ({ isDarkMode }) => {
   const [showFeaturesDropdown, setShowFeaturesDropdown] = useState(false);
-  const [showContactDropdown, setShowContactDropdown] = useState(false);
   const [popupContent, setPopupContent] = useState('');
   const [showPopup, setShowPopup] = useState(false);
   const [showEmailPopup, setShowEmailPopup] = useState(false); // New state for email popup
 
-  const navigate = useNavigate();
 
   const handleFeatureClick = (feature) => {
     let content = {
