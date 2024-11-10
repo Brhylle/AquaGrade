@@ -133,12 +133,12 @@ function App() {
           </div>
           }
         />
-
+{/* 
         <Route path="/admin" element={
           <div>
             <AdminPage />
           </div>
-        }/>
+        }/> */}
       </Routes>
 
       <Toaster />

@@ -40,7 +40,7 @@ const Navbar = ({ isDarkMode }) => {
 
 
   const handleSettingsClick = () => {
-    navigate('/admin');
+    // navigate(''); 
   };
 
   return (
