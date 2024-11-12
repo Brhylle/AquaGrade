@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{import}
+\subimport{./}{init}
+\usetikzlibrary{positioning}
+
+\def\ConvColor{rgb:yellow,5;red,2.5;white,5}
+\def\BNColor{rgb:blue,5;red,1.5;white,5}
+\def\ReluColor{rgb:green,2.5;blue,5;white,5}
+\def\ConcatColor{rgb:red,1;black,3;white,5}
+\def\UpsampleColor{rgb:orange,5;yellow,2.5;white,5}
+\def\ConvColor{rgb:yellow,5;red,5;white,5}
+\def\PoolColor{rgb:blue,5;green,2.5;white,5}
+
+\newcommand{\layer}[4]{
+    \pic[shift={#1}] at (0,0) {RightBandedBox={name=#2, caption=#3, xlabel={{" ","dummy"}}, zlabel=#4, fill=\ConvColor, bandfill=\BNColor, height=40, width={#4}, depth=40}};
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+    % Input
+    \node[canvas is zy plane at x=0] (input) at (0,0,0) {\includegraphics[width=5cm]{input.png}};
+    
+    % Conv Layers
+    \layer{(1,0,0)}{conv1}{Conv 3x3, Stride 2}{16}
+    \layer{(3,0,0)}{conv2}{Conv 3x3, Stride 2}{32}
+    
+    % C2f Layers
+    \layer{(5,0,0)}{c2f1}{C2f}{32}
+    \layer{(7,0,0)}{conv3}{Conv 3x3, Stride 2}{64}
+    \layer{(9,0,0)}{c2f2}{C2f}{64}
+    
+    % SPPF
+    \layer{(11,0,0)}{sppf}{SPPF}{256}
+    
+    % Upsample & Concat
+    \node[canvas is zy plane at x=13] (upsample1) at (13,0,0) {\includegraphics[width=2cm]{upsample.png}};
+    \node[canvas is zy plane at x=15] (concat1) at (15,0,0) {\includegraphics[width=2cm]{concat.png}};
+    
+    % C2f Block
+    \layer{(17,0,0)}{c2f3}{C2f}{128}
+    
+    % Detection Head
+    \layer{(19,0,0)}{detect}{Detect}{3}
+    
+    % Connections
+    \draw [connection]  (input-east)    -- node {\midarrow} (conv1-west);
+    \draw [connection]  (conv1-east)    -- node {\midarrow} (conv2-west);
+    \draw [connection]  (conv2-east)    -- node {\midarrow} (c2f1-west);
+    \draw [connection]  (c2f1-east)     -- node {\midarrow} (conv3-west);
+    \draw [connection]  (conv3-east)    -- node {\midarrow} (c2f2-west);
+    \draw [connection]  (c2f2-east)     -- node {\midarrow} (sppf-west);
+    \draw [connection]  (sppf-east)     -- node {\midarrow} (upsample1-west);
+    \draw [connection]  (upsample1-east) -- node {\midarrow} (concat1-west);
+    \draw [connection]  (concat1-east)   -- node {\midarrow} (c2f3-west);
+    \draw [connection]  (c2f3-east)      -- node {\midarrow} (detect-west);
+
+\end{tikzpicture}
+
+\end{document}
