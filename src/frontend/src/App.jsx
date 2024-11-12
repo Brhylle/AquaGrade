@@ -19,6 +19,7 @@ import LoginPage from "./pages/LoginPage"
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 import TeamPage from "./pages/TeamPage";
 import ScanPage from "./pages/ScanPage";
+import InferenceApp from './pages/InferenceApp';
 
 // STORES :
 import { Toaster } from "react-hot-toast";
@@ -123,6 +124,11 @@ function App() {
             {/* <Navbar /> Ensure Navbar is rendered on the CNN page */}
             <TeamPage isDarkMode={isDarkMode} toggleTheme={toggleTheme}/>
           </div>
+        }/>
+        <Route path='/inference' element={
+          <ProtectedRoute>
+            <InferenceApp isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+          </ProtectedRoute>
         }/>
 
         {/* <Route path="/scan" element={
